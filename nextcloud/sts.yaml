@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: nextcloud
+spec:
+  selector:
+    matchLabels:
+      app: nextcloud 
+  serviceName: nextcloud
+  template:
+    metadata:
+      labels:
+        app: nextcloud 
+    spec:
+      terminationGracePeriodSeconds: 10
+      containers:
+      - name: nextcloud
+        image: nextcloud
+        ports:
+        - containerPort: 80
+        envFrom:
+        - secretRef:
+            name: nextcloud
+        volumeMounts:
+        - name: data
+          mountPath: /var/www/html/data
+          subPath: nextcloud
+        - name: nextcloud
+          mountPath: /var/www/html
+        resources:
+          requests:
+            memory: 100Mi
+            cpu: 50m
+          limits:
+            memory: 500Mi
+  volumeClaimTemplates:
+  - metadata:
+      name: data
+    spec:
+      storageClassName: nfs-medias
+      accessModes: [ "ReadWriteOnce" ]
+      resources:
+        requests:
+          storage: 5Gi
+  - metadata:
+      name: nextcloud
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      storageClassName: longhorn
+      resources:
+        requests:
+          storage: 4Gi

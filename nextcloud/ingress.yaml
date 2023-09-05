@@ -1,0 +1,44 @@
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+    name: nextcloud
+spec:
+    routes:
+        - kind: Rule
+          match: ENC[AES256_GCM,data:zHSAY+Sq9XvgxGvNu3uL0Zx1FD7VcIaT5PP+t1Y=,iv:N5vMk2xTtDJQWxStT2dwcXgijvMqjYpQ1mJnX1dOJPc=,tag:RPqxNLEBoyCnDeTkFeTHCA==,type:str]
+          middlewares: []
+          services:
+            - name: nextcloud
+              port: 80
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age: []
+    lastmodified: "2023-09-05T19:25:58Z"
+    mac: ENC[AES256_GCM,data:X+stepi0v21yGN4hbGi1fToX3+Wsne/5rDxKXSsTOL8Wkue5LXF/XI5Xa2KBTJ67+ejBnkSxOpDxDmI/QFSNER/xIcbFu2mQ48Hpr8PSdb6NGbKHFKpjeCChxhhadXAyZuqXSGq8+Zohpzz1434ZbUBM/F0iD93brEKmzsq0y+8=,iv:T/pZYeZXrPFiWL1zT5LBCYxKqyBp2dr5WOMZesc7d0Q=,tag:/RBTwC3WiVMik4tiJO75gg==,type:str]
+    pgp:
+        - created_at: "2023-09-05T19:25:57Z"
+          enc: |
+            -----BEGIN PGP MESSAGE-----
+
+            hQIMAyyGYy7YCFAQARAAlywW4EsDQEhEq2RW0uu4FzpskpX4Wn6OYFnn0btAEsvl
+            gWpL/dvOuzOOqRgHbFa2q7vTHWi4v0EQtBvyQP7hLkWJcGaPWCCCzVIfyWMGqL5V
+            NQDHp+wtlIa0OlfopfvFfc7v75FXjVoMcFBgox8SHhuz/Ex62Za4CC/DEDk7c5Nu
+            yDCAX/0URuc9H2qaAw0KIoHTvwfE0q6I1dmDZYa8kzCKltvt2cdRbb9Hy0bmM9rc
+            Nsxva9qA49d7EkBdpiqKHCKU2EC3SZUtTwO3VUjLX/zUsSxEAyOT4oXrquBVjIok
+            CExva7ojsDSVVXddSF2rbun9LHiejuTlTSWCv0W/qknGaWSeiW/MzdaN5US3Rc3N
+            Cm/d76bI1z8DBNJL5z82WwR4Luv5pPlg/XXhgYqn9UpbrZYhWGjyeV91b4j2PYVS
+            M1HFJNbTkDyi7afw9TNJ+UDxKGM68cIh0cpBfkBY+JKunjbMgoJibh/tZaYJDkaB
+            1tLO+P78YcFhsbO48sUF1Gxtme41sUtsmhdT0HGt/NwBIMNqZGqp3xEUG+mKO3xY
+            CgawSfibUeJh8ppu1JaFvWcrda7aIOWUgrNREdTTW11VxxqLoPUn/cmojjVHXJNa
+            RRNtx+mpc6i1D13MPkVZu2DV7F2wOZyFMfHJfDplbry8WsvoAsEgS9zVFvFPxoXU
+            aAEJAhDVjrhHuL30TWlvQmkOm/U7UQM9DTNaGJbHz5eNFvUALJSWnYVTnTt37j0t
+            cXWOM2F3z9XvY8vu/qCrOzNWNEb5ixKhdvTKhuGCbaI8ps7MYbBhV9FRti4kFFBq
+            3v+SLzg1DXck
+            =RN+K
+            -----END PGP MESSAGE-----
+          fp: 75C3F62D6A9AA2165875F5C680A364E41D3C47AF
+    encrypted_regex: ^(match)$
+    version: 3.7.3
