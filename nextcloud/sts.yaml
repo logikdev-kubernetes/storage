@@ -37,7 +37,7 @@ spec:
   - metadata:
       name: data
     spec:
-      storageClassName: nfs-medias
+      storageClassName: nfs-nextcloud
       accessModes: [ "ReadWriteOnce" ]
       resources:
         requests:
