@@ -24,7 +24,6 @@ spec:
         volumeMounts:
         - name: data
           mountPath: /var/www/html/data
-          subPath: nextcloud
         - name: nextcloud
           mountPath: /var/www/html
         resources:
