@@ -4,5 +4,7 @@ namespace: storage
 resources:
   - namespace.yaml
   - nextcloud-secrets.yaml
+  - middleware.yaml
+  - ingress.yaml
   - sts.yaml
   - service.yaml
