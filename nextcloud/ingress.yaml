@@ -6,7 +6,9 @@ spec:
     routes:
         - kind: Rule
           match: ENC[AES256_GCM,data:zHSAY+Sq9XvgxGvNu3uL0Zx1FD7VcIaT5PP+t1Y=,iv:N5vMk2xTtDJQWxStT2dwcXgijvMqjYpQ1mJnX1dOJPc=,tag:RPqxNLEBoyCnDeTkFeTHCA==,type:str]
-          middlewares: []
+          middlewares:
+          - name: nextcloud-headers
+            namespace: storage
           services:
             - name: nextcloud
               port: 80
