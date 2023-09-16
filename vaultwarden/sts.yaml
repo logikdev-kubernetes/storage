@@ -20,8 +20,8 @@ spec:
         - name: vaultwarden
           mountPath: /data
         envFrom:
-        - configMapRef:
-           name: vaultwarden-env
+        - secretRef:
+           name: vaultwarden
         resources:
           requests:
             memory: 100Mi

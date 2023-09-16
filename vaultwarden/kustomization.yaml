@@ -3,12 +3,9 @@ kind: Kustomization
 namespace: storage
 resources:
   - ../common
+  - vaultwarden-secrets.yaml
   - ingress.yaml
   - service.yaml
   - sts.yaml
 commonLabels:
   app: vaultwarden
-configMapGenerator:
-  - name: vaultwarden-env
-    envs:
-      - .env
