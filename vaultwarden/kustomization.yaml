@@ -3,8 +3,12 @@ kind: Kustomization
 namespace: storage
 resources:
   - ../common
-  - nextcloud-secrets.yaml
-  - middleware.yaml
   - ingress.yaml
-  - sts.yaml
   - service.yaml
+  - sts.yaml
+commonLabels:
+  app: vaultwarden
+configMapGenerator:
+  - name: vaultwarden-env
+    envs:
+      - .env
