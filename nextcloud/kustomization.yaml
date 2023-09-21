@@ -4,7 +4,8 @@ namespace: storage
 resources:
   - ../common
   - nextcloud-secrets.yaml
-  - middleware.yaml
+  - nextcloud-headers-middleware.yaml
+  - nextcloud-dav-middleware.yaml
   - ingress.yaml
   - sts.yaml
   - service.yaml

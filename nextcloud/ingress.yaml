@@ -9,6 +9,8 @@ spec:
           middlewares:
           - name: nextcloud-headers
             namespace: storage
+          - name: nextcloud-dav
+            namespace: storage
           services:
             - name: nextcloud
               port: 80
