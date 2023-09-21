@@ -7,9 +7,9 @@ spec:
         - kind: Rule
           match: ENC[AES256_GCM,data:zHSAY+Sq9XvgxGvNu3uL0Zx1FD7VcIaT5PP+t1Y=,iv:N5vMk2xTtDJQWxStT2dwcXgijvMqjYpQ1mJnX1dOJPc=,tag:RPqxNLEBoyCnDeTkFeTHCA==,type:str]
           middlewares:
-          - name: nextcloud-headers
-            namespace: storage
           - name: nextcloud-dav
+            namespace: storage
+          - name: nextcloud-headers
             namespace: storage
           services:
             - name: nextcloud
